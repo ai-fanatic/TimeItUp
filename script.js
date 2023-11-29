@@ -5,7 +5,7 @@ const analyzeButton = document.getElementById('analyzeButton');
 const analysisResult = document.getElementById('analysisResult');
 
 // Function to add a task to the table
-/* document.getElementById('addTaskButton').addEventListener('click', function(event) {
+document.getElementById('addTaskButton').addEventListener('click', function(event) {
     // Your existing code to handle the task addition
 	
     // Trigger confetti
@@ -14,7 +14,7 @@ const analysisResult = document.getElementById('analysisResult');
         spread: 60,
         origin: { y: 0.5 }
     });
-}); */
+});
 
 function addTaskToTable(task, taskId) {
 	const row = document.createElement('tr');
