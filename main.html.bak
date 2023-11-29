@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker with Eisenhower Matrix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="bannerImage" style="cursor: pointer;">
+        <img src="task-manager-banner.png" alt="Task Manager Robot" style="width: 100%;">
+    </div>
+	<div id="taskManagerContent" style="display: none;">
+    <form id="taskForm">
+		<label for="date">Date:</label>
+        <input type="date" id="dateInput" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" required>
+
+        <label for="task">Task:</label>
+        <input type="text" id="task" required>
+
+        <label for="urgent">Urgent:</label>
+        <input type="checkbox" id="urgent">
+
+        <label for="important">Important:</label>
+        <input type="checkbox" id="important">
+
+        <button type="submit" id="addTaskButton" class="large-button">Add Task</button>
+    </form>
+
+    <table id="taskTable">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Task</th>
+                <th>Urgent?</th>
+                <th>Important?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tasks will be added here -->
+        </tbody>
+    </table>
+
+    <button id="analyzeButton" class="large-button">Analyze Day</button>
+    <div id="analysisResult">
+        <!-- Analysis results will be displayed here -->
+    </div>
+	 <div id="downloadButtons">
+        <button onclick="downloadTasksAsText()">Download as Text</button>
+        <button onclick="downloadTasksAsExcel()">Download as Excel</button>
+    </div>
+	</div>
+	<!-- Theme Toggle Button -->
+	<div class="theme-toggle">
+		<input type="checkbox" id="theme-toggle-checkbox" />
+		<label for="theme-toggle-checkbox" class="theme-toggle-label">
+			<span class="theme-toggle-icon sun">&#x2600;<!-- Sun icon --></span>
+			<span class="theme-toggle-icon moon">&#x1F319;<!-- Moon icon --></span>
+		</label>
+	</div>
+	
+    <!-- Rest of the body remains the same -->
+    <script src="script.js"></script>
+	<!-- Include SheetJS if you're using Excel download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

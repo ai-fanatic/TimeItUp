@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+form {
+    margin-bottom: 20px;
+}
+
+label, input, button {
+    margin: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+/* Modern design adjustments and theme handling */
+
+:root {
+    --background-color: #fff;
+    --text-color: #333;
+    --button-bg-color: #007bff;
+    --button-text-color: #fff;
+}
+
+body[data-theme='dark'] {
+    --background-color: #333;
+    --text-color: #fff;
+    --button-bg-color: #555;
+    --button-text-color: #fff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* Rest of the body styling */
+}
+
+button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    /* Rest of the button styling */
+}
+
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    /* Additional styling for toggle */
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: fixed;
+    top: 2px;
+    right: 10px;
+	z-index: 1000;
+}
+
+#theme-toggle-checkbox {
+    display: none;
+}
+
+.theme-toggle-label {
+    display: block;
+    width: 50px;
+    height: 25px;
+    background-color: #111;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-toggle-icon {
+    position: absolute;
+    top: 5px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.sun {
+    left: 5px;
+}
+
+.moon {
+    right: 5px;
+    display: none;
+}
+
+#theme-toggle-checkbox:checked + .theme-toggle-label .sun {
+    display: none;
+}
+
+#theme-toggle-checkbox:checked + .theme-toggle-label .moon {
+    display: block;
+}
+
+#theme-toggle-checkbox:checked + .theme-toggle-label {
+    background-color: #f0c419;
+}
+
+/* Table Header Color in Dark Theme */
+body[data-theme='dark'] thead th {
+    color: #000000; /* Or any other color that's visible on dark background */
+}
+#downloadButtons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#downloadButtons button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#downloadButtons button:hover {
+    background-color: #0056b3;
+}
+
+.large-button {
+    padding: 10px 20px; /* Larger padding */
+    font-size: 12px; /* Larger font size */
+    border-radius: 5px; /* Optional: rounded corners */
+    border: none; /* Optional: removes border */
+    background-color: #007bff; /* Background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+    margin: 5px; /* Spacing around the button */
+}
+
+.large-button:hover {
+    background-color: #0056b3; /* Slightly darker color on hover for visual feedback */
+}
