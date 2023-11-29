@@ -5,7 +5,7 @@ TimeItUp is a dynamic and user-friendly web application designed to enhance pers
 
 ## Description
 TimeItUp is a dynamic and user-friendly web application designed to enhance personal productivity and time management. This interactive task tracker allows users to record and manage their daily tasks efficiently.
-
+🔗Link: https://ai-fanatic.github.io/TimeItUp/main.html
 ## Key Features
 
 - **Task Recording**: Enter tasks with details like time, description, urgency, and importance.
@@ -18,7 +18,7 @@ TimeItUp is a dynamic and user-friendly web application designed to enhance pers
 - **Automatic Date/Time Set**: Defaults to the current date and time, rounded to the nearest hour for convenience.
 
 ## Deployment
-Deployed on GitHub Pages, TimeItUp is easily accessible and free for use. Visit [TimeItUp](https://<username>.github.io/<repository>) to start organizing your day more effectively.
+Deployed on GitHub Pages, TimeItUp is easily accessible and free for use. Visit [TimeItUp](https://ai-fanatic.github.io/TimeItUp/main.html) to start organizing your day more effectively.
 
 ## Contributing
 Contributions to the project are welcome! If you have suggestions or issues, please feel free to open an issue or submit a pull request.
