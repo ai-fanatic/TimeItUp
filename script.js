@@ -17,19 +17,19 @@ const analysisResult = document.getElementById('analysisResult');
 }); */
 
 function addTaskToTable(task, taskId) {
-		const row = document.createElement('tr');
-		row.innerHTML = `
-			<td>${task.time}</td>
-			<td>${task.description}</td>
-			<td>${task.urgent ? 'Yes' : 'No'}</td>
-			<td>${task.important ? 'Yes' : 'No'}</td>
-			<td>
-				<button onclick="editTask(${taskId})">Edit</button>
-				<button onclick="deleteTask(${taskId})">Delete</button>
-			</td>
-		`;
-		taskTable.appendChild(row);
-	}
+	const row = document.createElement('tr');
+	row.innerHTML = `
+		<td>${task.time}</td>
+		<td>${task.description}</td>
+		<td>${task.urgent ? 'Yes' : 'No'}</td>
+		<td>${task.important ? 'Yes' : 'No'}</td>
+		<td>
+			<button onclick="editTask(${taskId})">Edit</button>
+			<button onclick="deleteTask(${taskId})">Delete</button>
+		</td>
+	`;
+	taskTable.appendChild(row);
+}
 
 // Function to handle form submission
 taskForm.onsubmit = function(event) {
@@ -82,7 +82,7 @@ taskForm.onsubmit = function(event) {
     };
 
     addTaskToTable(task);
-    storeTask(task); // Storing the task in local storage
+    storeTask(task); // Storing the task in local storage of the app
 };
 
 // Function to calculate and display the Eisenhower matrix
