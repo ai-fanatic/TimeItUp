@@ -5,20 +5,31 @@ const analyzeButton = document.getElementById('analyzeButton');
 const analysisResult = document.getElementById('analysisResult');
 
 // Function to add a task to the table
+/* document.getElementById('addTaskButton').addEventListener('click', function(event) {
+    // Your existing code to handle the task addition
+	
+    // Trigger confetti
+    confetti({
+        particleCount: 40,
+        spread: 60,
+        origin: { y: 0.5 }
+    });
+}); */
+
 function addTaskToTable(task, taskId) {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-		<td>${task.time}</td>
-        <td>${task.description}</td>
-        <td>${task.urgent ? 'Yes' : 'No'}</td>
-        <td>${task.important ? 'Yes' : 'No'}</td>
-        <td>
-            <button onclick="editTask(${taskId})">Edit</button>
-            <button onclick="deleteTask(${taskId})">Delete</button>
-        </td>
-    `;
-    taskTable.appendChild(row);
-}
+		const row = document.createElement('tr');
+		row.innerHTML = `
+			<td>${task.time}</td>
+			<td>${task.description}</td>
+			<td>${task.urgent ? 'Yes' : 'No'}</td>
+			<td>${task.important ? 'Yes' : 'No'}</td>
+			<td>
+				<button onclick="editTask(${taskId})">Edit</button>
+				<button onclick="deleteTask(${taskId})">Delete</button>
+			</td>
+		`;
+		taskTable.appendChild(row);
+	}
 
 // Function to handle form submission
 taskForm.onsubmit = function(event) {
@@ -27,8 +38,8 @@ taskForm.onsubmit = function(event) {
 
     // Creating a task object based on form inputs
     const task = {
-		date: document.getElementById('date').value,
-        time: document.getElementById('time').value,
+		date: document.getElementById('dateInput').value,
+        time: document.getElementById('timeInput').value,
         description: document.getElementById('task').value,
         urgent: document.getElementById('urgent').checked,
         important: document.getElementById('important').checked
@@ -64,7 +75,7 @@ taskForm.onsubmit = function(event) {
     event.preventDefault();
 
     const task = {
-        time: document.getElementById('time').value,
+        time: document.getElementById('timeInput').value,
         description: document.getElementById('task').value,
         urgent: document.getElementById('urgent').checked,
         important: document.getElementById('important').checked
@@ -230,16 +241,7 @@ function downloadTasksAsExcel() {
     XLSX.writeFile(workbook, 'tasks.xlsx');
 }
 
-document.getElementById('addTaskButton').addEventListener('click', function(event) {
-    // Your existing code to handle the task addition
 
-    // Trigger confetti
-    confetti({
-        particleCount: 40,
-        spread: 60,
-        origin: { y: 0.5 }
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     var today = new Date();
