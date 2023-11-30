@@ -279,3 +279,41 @@ function init() {
         gapi.auth2.init();
     });
 }
+
+document.getElementById('analyzeButton').addEventListener('click', function() {
+    const tasks = getStoredTasks(); // Replace this with your method of getting tasks
+    const matrix = { 
+        urgentImportant: [], 
+        urgentNotImportant: [], 
+        notUrgentImportant: [], 
+        notUrgentNotImportant: [] 
+    };
+
+    tasks.forEach(task => {
+        if (task.urgent && task.important) matrix.urgentImportant.push(task);
+        else if (task.urgent && !task.important) matrix.urgentNotImportant.push(task);
+        else if (!task.urgent && task.important) matrix.notUrgentImportant.push(task);
+        else matrix.notUrgentNotImportant.push(task);
+    });
+
+    displayEisenhowerMatrix(matrix);
+});
+
+function displayEisenhowerMatrix(matrix) {
+    const container = document.getElementById('eisenhowerMatrix');
+    container.innerHTML = '';
+
+    const quadrants = [
+        { name: 'Urgent & Important', tasks: matrix.urgentImportant },
+        { name: 'Urgent & Not Important', tasks: matrix.urgentNotImportant },
+        { name: 'Not Urgent & Important', tasks: matrix.notUrgentImportant },
+        { name: 'Not Urgent & Not Important', tasks: matrix.notUrgentNotImportant }
+    ];
+
+    quadrants.forEach(quadrant => {
+        const div = document.createElement('div');
+        div.className = 'matrix-quadrant';
+        div.innerHTML = `<strong>${quadrant.name}</strong><ul>${quadrant.tasks.map(task => `<li>${task.description}</li>`).join('')}</ul>`;
+        container.appendChild(div);
+    });
+}
